@@ -3,7 +3,11 @@ import { cn } from '@/lib/utils';
 import React from 'react';
 import ToolItem from './tool-item';
 
-const ToolNavigation = () => {
+type Props = {
+    title?: string;
+};
+
+const ToolNavigation: React.FC<Props> = ({ title }) => {
     return (
         <div
             className={cn(
@@ -13,7 +17,7 @@ const ToolNavigation = () => {
             )}
         >
             <div className="text-center mb-14">
-                <h3>Unlock the power of AI</h3>
+                <h3>{title}</h3>
                 <p className=" text-muted-foreground text-lg mt-2">
                     Chat with the smartest AI - Experience the power of AI with
                     us
@@ -26,6 +30,10 @@ const ToolNavigation = () => {
             </div>
         </div>
     );
+};
+
+ToolNavigation.defaultProps = {
+    title: 'Unlock the power of AI',
 };
 
 export default ToolNavigation;
