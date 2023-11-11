@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             <div
                 className={cn(
                     'fixed bottom-8 left-4 right-4',
-                    'lg:left-7 lg:right-auto',
+                    'sm:left-7 sm:right-auto',
                     isMinimal && 'lg:left-3',
                 )}
             >
