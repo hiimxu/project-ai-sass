@@ -1,3 +1,11 @@
+export type ToolItem = {
+    icon: string;
+    title: string;
+    url: string;
+    color?: string;
+    slug: 'code' | 'audio' | 'video' | 'photo' | 'conversation';
+};
+
 export const MAX_FREE_COUNTS = 5;
 
 export const THEME_MODES = [
@@ -11,7 +19,7 @@ export const THEME_MODES = [
     },
 ];
 
-export const TOOLS = [
+export const TOOLS: ToolItem[] = [
     {
         title: 'Conversation',
         icon: '/icons/conversation.svg',

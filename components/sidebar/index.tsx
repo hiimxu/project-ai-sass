@@ -41,7 +41,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 className={cn(
                     'fixed bottom-8 left-4 right-4',
                     'sm:left-7 sm:right-auto',
-                    isMinimal && 'lg:left-3',
+                    isMinimal && 'lg:left-3'
                 )}
             >
                 <div className="mb-4 p-4 rounded-lg bg-gray-900">
@@ -62,12 +62,12 @@ const Sidebar: React.FC<SidebarProps> = ({
                                         Generations
                                     </div>
                                     <Progress
+                                        className="bg-gray-950 h-3"
+                                        indicatorClassName="gradient-btn"
                                         value={
                                             (userLimitCount / MAX_FREE_COUNTS) *
                                             100
                                         }
-                                        className="bg-gray-950 h-3"
-                                        indicatorClassName="gradient-btn"
                                     />
                                 </div>
                             )}

@@ -2,9 +2,17 @@
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+
         "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
+
+        "airbnb",
+        "airbnb-typescript",
+        "next/core-web-vitals",
+
         "prettier",
-        "next/core-web-vitals"
+        "plugin:prettier/recommended"
     ],
     "settings": {
         "react": {
@@ -12,8 +20,8 @@
         }
     },
     "env": {
-        "browser": true,
-        "es2021": true
+        "es6": true,
+        "node": true
     },
     "overrides": [
         {
@@ -28,11 +36,10 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+        "project": "./tsconfig.json"
     },
-    "plugins": ["@typescript-eslint", "react", "prettier"],
-    "ignorePatterns": ["dist", "node_modules"],
+    "plugins": ["@typescript-eslint"],
+    "ignorePatterns": ["dist", "node_modules", "components/ui"],
     "rules": {
         "no-param-reassign": ["error", { "props": false }],
         "@typescript-eslint/no-unused-vars": "error",
@@ -76,6 +83,13 @@
                 "avoidEscape": true
             }
         ],
+        //Prettier
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
         // ES6
         "array-callback-return": "off",
         "prefer-const": "error",
@@ -102,12 +116,12 @@
                 "checkAliases": true
             }
         ],
-        // "react/jsx-sort-props": [
-        //     "error",
-        //     {
-        //         "ignoreCase": true
-        //     }
-        // ],
+        "react/jsx-sort-props": [
+            "error",
+            {
+                "ignoreCase": true
+            }
+        ],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": 0
     }

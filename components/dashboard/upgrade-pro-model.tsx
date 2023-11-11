@@ -1,8 +1,9 @@
 'use client';
+
 import React from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import SubscriptionButton from '../subscription-button';
 import { useProStore } from '@/store/pro-store';
+import SubscriptionButton from '../subscription-button';
 
 type Props = {
     isProPlan?: boolean;
@@ -23,6 +24,10 @@ const UpgradeProModal: React.FC<Props> = ({ isProPlan }) => {
             </DialogContent>
         </Dialog>
     );
+};
+
+UpgradeProModal.defaultProps = {
+    isProPlan: undefined,
 };
 
 export default UpgradeProModal;

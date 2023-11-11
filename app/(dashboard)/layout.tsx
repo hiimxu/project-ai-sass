@@ -19,12 +19,12 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
             </header>
             <main className="lg:bg-gray-950 lg:overflow-hidden lg:pl-80 [&:has([is-navbar-minimal])]:lg:pl-20 lg:pr-7 lg:py-7">
                 <Sidebar
-                    isProPlan={isProPlan}
-                    userLimitCount={userLimitCount}
                     className={cn(
                         'fixed left-0 z-20 w-80 [&:has([is-navbar-minimal])]:w-fit hidden',
-                        'lg:block',
+                        'lg:block'
                     )}
+                    isProPlan={isProPlan}
+                    userLimitCount={userLimitCount}
                 />
                 <MobileSidebar
                     isProPlan={isProPlan}
@@ -34,7 +34,7 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
                 <div
                     className={cn(
                         'bg-background h-[calc(100vh-56px)]',
-                        'lg:rounded-3xl lg:p-7',
+                        'lg:rounded-3xl lg:p-7'
                     )}
                 >
                     {children}

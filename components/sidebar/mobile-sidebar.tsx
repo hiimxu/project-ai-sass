@@ -1,8 +1,9 @@
 'use client';
+
 import React from 'react';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
-import Sidebar from '.';
 import { useSidebarStore } from '@/store/sidebar-store';
+import Sidebar from '.';
 
 type Props = {
     isProPlan?: boolean;
@@ -15,16 +16,20 @@ const MobileSidebar: React.FC<Props> = ({ isProPlan, userLimitCount }) => {
     return (
         <Sheet open={isOpen}>
             <SheetContent
-                side="left"
                 className="w-screen border-none bg-black p-0 pt-8"
+                side="left"
             >
                 <Sidebar
-                    userLimitCount={userLimitCount}
                     isProPlan={isProPlan}
+                    userLimitCount={userLimitCount}
                 />
             </SheetContent>
         </Sheet>
     );
+};
+
+MobileSidebar.defaultProps = {
+    isProPlan: undefined,
 };
 
 export default MobileSidebar;

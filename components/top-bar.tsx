@@ -2,10 +2,10 @@
 
 import { cn } from '@/lib/utils';
 import React from 'react';
-import Logo from './logo';
-import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
 import { useSidebarStore } from '@/store/sidebar-store';
+import Logo from './logo';
+import { Button } from './ui/button';
 
 const TopBar = () => {
     const { handleOpenOrClose } = useSidebarStore();
@@ -14,11 +14,11 @@ const TopBar = () => {
         <div
             className={cn(
                 'flex items-center p-4 justify-between sticky top-0 z-30',
-                'lg:hidden',
+                'lg:hidden'
             )}
         >
             <Logo />
-            <Button variant="ghost" size="icon" onClick={handleOpenOrClose}>
+            <Button onClick={handleOpenOrClose} size="icon" variant="ghost">
                 <Menu />
             </Button>
         </div>

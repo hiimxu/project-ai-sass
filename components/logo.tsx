@@ -20,4 +20,8 @@ const Logo: React.FC<Props> = ({ className }) => {
     );
 };
 
+Logo.defaultProps = {
+    className: undefined,
+};
+
 export default Logo;

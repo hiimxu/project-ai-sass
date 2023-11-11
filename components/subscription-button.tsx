@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Button } from './ui/button';
 import { Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from './ui/button';
 // import axios from 'axios';
 import { useToast } from './ui/use-toast';
 
@@ -34,20 +34,25 @@ const SubscriptionButton: React.FC<Props> = ({ className, isPro }) => {
     return (
         <div className={className}>
             <Button
-                variant="outline"
-                size="lg"
-                disabled={loading}
-                onClick={handleSubscribe}
                 className={cn(
                     'text-white w-full font-semibold border-none gradient-btn',
-                    'hover:text-white',
+                    'hover:text-white'
                 )}
+                disabled={loading}
+                onClick={handleSubscribe}
+                size="lg"
+                variant="outline"
             >
                 <span>{isPro ? 'Manage Subscription' : 'Upgrade to Pro'}</span>
                 <Sparkles />
             </Button>
         </div>
     );
+};
+
+SubscriptionButton.defaultProps = {
+    className: undefined,
+    isPro: undefined,
 };
 
 export default SubscriptionButton;
